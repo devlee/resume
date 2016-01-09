@@ -1,0 +1,306 @@
+<dom-module id="elements-grid">
+
+
+    <style>
+        :host {
+            display: block;
+            background: #e4e4e4;
+            padding: 5px 5px;
+            box-sizing: border-box;
+        }
+        
+        .tile {
+            display: flex;
+            vertical-align: top;
+            width: calc(100% / 2);
+            height: calc(100% / 2);
+            background: #e4e4e4;
+            color: #1e1e1e;
+            float: left;
+            padding: 5px;
+            box-sizing: border-box;
+            @apply(--paper-font-title);
+            @apply(--layout-center);
+            @apply(--layout-flex-2);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .tile {
+                width: calc(100%);
+                height: auto;
+            }
+        }
+        
+        paper-card {
+            width: calc(100%);
+            height: calc(100%);
+            overflow: hidden;
+        }
+        
+        .sub-tile {
+            display: inline-block;
+        }
+        
+        .list {
+            list-style: none;
+            padding: 0 15px;
+            @apply(--layout-flex-5);
+        }
+        
+        li.sub-tile {
+            list-style: none;
+            display: list-item;
+        }
+        
+        .program {
+            width: 20%;
+        }
+        
+        .program li {
+            white-space: normal;
+        }
+        
+        .year {
+            font-size: 36px;
+            color: #007acc;
+        }
+        
+        .card-content {
+            border-top: 1px solid #e4e4e4;
+        }
+        
+        .content-wrap {
+            padding-left: 40px;
+            position: relative;
+            white-space: normal;
+        }
+        
+        .content-m {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #007acc;
+            padding-left: 8px;
+        }
+        
+        .card-content.city {
+            background: #007acc;
+            color: #fff;
+            display: flex;
+            @apply(--layout-center);
+        }
+        .year-2012 .card-content.city{
+            background: var(--google-red-500);
+        }
+        .year-2013 .card-content.city{
+            background: var(--google-blue-500);
+        }
+        .year-2014 .card-content.city{
+            background: var(--google-green-500);
+        }
+        .year-2015 .card-content.city{
+            background: var(--google-yellow-500);
+        }
+    </style>
+
+    <template>
+
+        <template is="dom-repeat" items="[[config]]">
+            <div class$="[[_computeTileClass(item.year)]]">
+                <paper-card heading="[[item.year]]">
+                    <div class="card-content city">
+                        <paper-icon-button icon="image:assistant-photo"></paper-icon-button>
+                        <span>[[item.city]]</span>
+                    </div>
+                    <div class="card-content">
+                        <template is="dom-repeat" items="[[item.timeline]]">
+                            <div class="content-wrap">
+                                <span class="content-m">[[item.m]]</span>
+                                <span>[[item.d]]</span>
+                            </div>
+                        </template>
+                    </div>
+                    <!--<div class="card-actions">
+                        <paper-button>Some action</paper-button>
+                    </div>-->
+                </paper-card>
+            </div>
+            <!--<div class$="[[_computeTileClass(item.year)]]">
+                <paper-button noink class="sub-tile year">[[item.year]]</paper-button>
+                <ul class="list">
+                    <li class="sub-tile">[[item.timearea]]</li>
+                    <li class="sub-tile">[[item.company]]</li>
+                </ul>
+                <ul class="list program">
+                    <template is="dom-repeat" items="[[item.list]]">
+                        <li class="sub-tile">[[item.name]]</li>
+                        <li class="sub-tile"><p>[[item.desc]]</p></li>
+                    </template>
+                </ul>
+                <ul class="list">
+                    <template is="dom-repeat" items="[[item.tech]]">
+                        <li class="sub-tile">[[item]]</li>
+                    </template>
+                </ul>
+            </div>-->
+        </template>
+
+    </template>
+
+</dom-module>
+
+<script>
+Polymer({
+
+    is: 'elements-grid',
+
+    behaviors: [
+        Polymer.NeonSharedElementAnimatableBehavior
+    ],
+
+    properties: {
+
+        config: {
+            type: Array,
+            value: function () {
+                return [
+                    { 
+                        year: '2015',
+                        tech: [
+                            'Polymer',
+                            'Angular2-Meteor'
+                        ],
+                        list: [
+                            {
+                                name: '电子商务网站',
+                                desc: '参与过三个项目，维护一个现有的站点，负责搭建两个新站点'
+                            }
+                        ],
+                        company: '上海乐麦网络科技有限公司',
+                        timearea: '2014.12-2016.01',
+                        city: '上海',
+                        timeline: [
+                        ]
+                    },
+                    { 
+                        year: '2014',
+                        tech: [
+                            'Bootstrap',
+                            'MEAN Stack'
+                        ],
+                        list: [
+                            {
+                                name: '资金管理系统',
+                                desc: '负责系统登录、查询、分析等若干模块'
+                            }
+                        ],
+                        company: '常州诚迈科技有限公司',
+                        timearea: '2014.09-2014.12',
+                        city: '南京·常州·上海',
+                        timeline: [
+                            {
+                                m: "12",
+                                d: "入职上海乐麦网络科技有限公司"  
+                            },
+                            {
+                                m: "09",
+                                d: "入职常州诚迈科技有限公司"
+                            }
+                        ]
+                    },
+                    { 
+                        year: '2013',
+                        tech: [
+                            'RequireJS',
+                            'Backbone.js'
+                        ],
+                        list: [
+                            {
+                                name: '青奥安保指挥调度平台',
+                                desc: '负责系统登录、查询、分析等若干模块'
+                            }
+                        ],
+                        company: '南京保通电讯公司',
+                        timearea: '2012.12-2014.09',
+                        city: '南京',
+                        timeline: [
+                            {
+                                m: "04",
+                                d: "开始建设青奥安保指挥调度平台"
+                            }
+                        ]
+                    },
+                    { 
+                        year: '2012',
+                        tech: [
+                            'jQuery'
+                        ],
+                        list: [
+                            {
+                                name: '地理信息系统(GIS - MAP)',
+                                desc: '负责系统登录、查询、分析等若干模块'
+                            }
+                        ],
+                        company: '南京保通电讯公司',
+                        timearea: '2012.12-2014.09',
+                        city: '安徽·南京',
+                        timeline: [
+                            {
+                                m: "12",
+                                d: "入职南京保通电讯公司"  
+                            },
+                            {
+                                m: "07",
+                                d: "进入南京达内技术学校培训java"  
+                            },
+                            {
+                                m: "06",
+                                d: "毕业于安徽工业大学"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+
+        animationConfig: {
+            type: Object,
+            value: function () {
+                return {
+                    'entry': [{
+                        name: 'cascaded-animation',
+                        animation: 'transform-animation',
+                        transformFrom: 'translateY(100%)',
+                        transformTo: 'none',
+                        timing: {
+                            delay: 50
+                        }
+                    },{
+                        name: 'cascaded-animation',
+                        animation: 'fade-in-animation',
+                        timing: {
+                            delay: 100
+                        }
+                    }]
+                }
+            }
+        }
+
+    },
+
+    attached: function () {
+        this.async(function () {
+            var nodeList = Polymer.dom(this.root).querySelectorAll('.tile');
+            this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
+            var subnodeList = Polymer.dom(this.root).querySelectorAll('.sub-tile');
+            this.animationConfig['entry'][1].nodes = Array.prototype.slice.call(subnodeList);
+        });
+    },
+
+    _computeTileClass: function (year) {
+        return 'tile year-' + year;
+    }
+
+});
+
+</script>

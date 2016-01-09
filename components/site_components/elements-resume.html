@@ -1,0 +1,133 @@
+<link rel="import" href="elements-grid.html">
+
+<dom-module id="elements-resume">
+
+    <style>
+        :host {
+            background: #e4e4e4;
+            visibility: hidden;
+            font-family:"Roboto";
+            @apply(--layout-vertical);
+        }
+        
+        .toolbar {
+            background: #007acc;
+            color: #fff;
+            height: 42px;
+            padding: 15px 10px;
+            z-index: 1;
+            @apply(--shadow-elevation-2dp);
+        }
+        
+        .fl {
+            float: left;
+        }
+        
+        .fr {
+            float: right;
+        }
+        
+        paper-button.gray{
+            background-color: #eee;
+        }
+        
+        paper-button .email{
+            text-decoration: none;
+            color: #007acc;
+        }
+        
+        .contacts {
+            position: absolute;
+            left: 15px;
+            top: 8px;
+        }
+        
+        elements-grid {
+            height: calc(100% - 72px);
+            @apply(--layout-flex);
+        }
+        
+        paper-item {
+            display: block;
+            position: relative;
+            padding: 8px 6px;
+            color: #007acc;
+            @apply(--layout-vertical);
+        }
+        
+        paper-item paper-button{
+            text-align: left;
+        }
+        
+    </style>
+
+    <template>
+
+        <div id="toolbar" class="toolbar">
+            <paper-menu-button class="custom fl contacts">
+                <paper-icon-button icon="menu" class="dropdown-trigger"></paper-icon-button>
+                <paper-menu class="dropdown-content">
+                    <paper-item>
+                        <paper-button><a href="mailto:{{email}}" class="email">{{email}}</a></paper-button>
+                    </paper-item>
+                    <paper-item>
+                        <paper-button>TEL: 18651215520</paper-button>
+                    </paper-item>
+                </paper-menu>
+            </paper-menu-button>
+            <paper-button class="custom fr">{{title}}</paper-button>
+        </div>
+
+        <elements-grid id="grid"></elements-grid>
+
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({
+
+        is: 'elements-resume',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            
+            title: {
+                type: String,
+                value: "devlee.resume"
+            },
+            
+            email: {
+                type: String,
+                value: "devlee@outlook.com"
+            },
+
+            animationConfig: {
+                type: Object,
+                value: function () {
+                    return {
+                        'entry': [{
+                            name: 'slide-down-animation',
+                            node: this.$.toolbar
+                        }, {
+                                animatable: this.$.grid,
+                                type: 'entry'
+                            }]
+                    };
+                }
+            }
+
+        },
+
+        show: function () {
+            this.style.visibility = 'visible';
+            this.playAnimation('entry');
+        }
+
+    });
+
+</script>

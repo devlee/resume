@@ -4,9 +4,18 @@
 		<meta charset="UTF-8">
 		<title>Resume-devlee@outlook.com</title>
         <script src="components/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+        <link rel="import" href="components/bower_components/font-roboto-local/roboto.html">
 		<link rel="import" href="components/site_components/elements.html">
 	</head>
-	<body>
-		<ele-btn></ele-btn>
-	</body>
+	<body class="fullbleed relative">
+
+        <elements-resume class="fit"></elements-resume>
+
+        <script>
+            document.addEventListener('WebComponentsReady', function() {
+                document.querySelector('elements-resume').show();
+            });
+        </script>
+
+    </body>
 </html>

@@ -1,0 +1,13 @@
+components/bower_components/**/*.json
+components/bower_components/**/*.md
+components/bower_components/**/demo
+components/bower_components/**/test
+components/bower_components/**/*.yml
+components/bower_components/**/index.html
+components/bower_components/**/*.txt
+components/bower_components/**/.gitignore
+components/bower_components/**/.log
+components/bower_components/**/hero.svg
+components/bower_components/**/COPYING
+components/bower_components/**/DESCRIPTION.en_us.html
+src
