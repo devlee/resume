@@ -1,0 +1,154 @@
+<dom-module id="elements-toolbar">
+    
+    <style>
+        :host {
+            background: #e4e4e4;
+            visibility: hidden;
+            font-family:"Roboto";
+            @apply(--layout-vertical);
+        }
+        
+        .theme-bg {
+            background: #007acc;
+        }
+        .theme {
+            color: #007acc;
+        }
+        .white {
+            color: #fff;
+        }
+        
+        .toolbar {
+            color: #fff;
+            height: 42px;
+            padding: 15px 10px;
+            z-index: 1;
+            @apply(--shadow-elevation-2dp);
+        }
+        
+        .fl {
+            float: left;
+        }
+        
+        .fr {
+            float: right;
+        }
+        
+        paper-button.gray{
+            background-color: #eee;
+        }
+        
+        paper-button .btn-link{
+            text-decoration: none;
+        }
+        
+        .contacts {
+            position: absolute;
+            left: 15px;
+            top: 8px;
+        }
+        
+        paper-item {
+            display: block;
+            position: relative;
+            padding: 8px 6px;
+            color: #007acc;
+            @apply(--layout-vertical);
+        }
+        
+        paper-item paper-button{
+            text-align: left;
+        }
+        
+        paper-item .item-span{
+           padding: 0.7em 0.57em;
+           margin: 0 0.29em;
+           min-width: 5.14em;
+        }
+        
+        #back {
+            display: none;
+            margin-left: 13px;
+        }
+        
+    </style>
+    
+    <template>
+        <div id="toolbar" class="toolbar theme-bg">
+            <paper-menu-button class="custom fl contacts" id="menu">
+                <paper-icon-button icon="menu" class="dropdown-trigger"></paper-icon-button>
+                <paper-menu class="dropdown-content">
+                    <paper-item>
+                        <span class="item-span">TEL: 18651215520</span>
+                    </paper-item>
+                    <paper-item>
+                        <paper-button><a href="mailto:{{email}}" class="btn-link theme">{{email}}</a></paper-button>
+                    </paper-item>
+                </paper-menu>
+            </paper-menu-button>
+            <paper-icon-button icon="arrow-back" on-click="_backToMain" id="back" class="custom fl"></paper-icon-button>
+            <paper-button class="custom fr"><a href="{{github}}" class="btn-link white">{{title}}</a></paper-button>
+        </div>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+
+        is: 'elements-toolbar',
+
+        behaviors: [
+            Polymer.NeonAnimatableBehavior,
+            Polymer.NeonAnimationRunnerBehavior
+        ],
+
+        properties: {
+            
+            title: {
+                type: String,
+                value: "devlee.resume@github"
+            },
+            
+            email: {
+                type: String,
+                value: "devlee@outlook.com"
+            },
+            
+            github: {
+                type: String,
+                value: "https://github.com/devlee/resume/"
+            },
+
+            animationConfig: {
+                type: Object,
+                value: function () {
+                    return {
+                        'entry': [{
+                            name: 'slide-down-animation',
+                            node: this.$.toolbar
+                        }]
+                    };
+                }
+            }
+
+        },
+
+        show: function (color) {
+            color = color || null;
+            this.style.visibility = 'visible';
+            if (color) {
+                this.$.toolbar.style.background = color;
+                this.$.menu.style.display = "none";
+                this.$.back.style.display = "block";
+            } else {
+                this.playAnimation('entry');
+            }
+        },
+        
+        _backToMain: function () {
+            var mainPage = document.querySelector('elements-resume');
+            mainPage.$.pages.selected = 0;
+        }
+
+    });
+</script>

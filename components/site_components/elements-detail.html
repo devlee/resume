@@ -1,0 +1,132 @@
+<dom-module id="elements-detail">
+    <style>
+        :host {
+            background: #eee;
+            height: 100%;
+            font-family: 'Microsoft YaHei';
+            @apply(--layout-flex);
+        }
+        paper-scroll-header-panel {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        h1 {
+            border-left: 3px solid #ccc;
+            padding-left: 20px;
+            color: #666;
+        }
+        
+        .content{
+            padding: 0 50px;
+        }
+        
+        .p {
+            padding: 20px;
+            color: #333;
+            transition: all .2s;
+            word-break: break-all;
+            background: #fff;
+            margin-bottom: 40px;
+            @apply(--shadow-elevation-6dp);
+        }
+        
+        .p ul,.p li{
+            list-style: none;
+            padding: 0;
+        }
+        
+        .box{
+            display: flex;
+            @apply(--layout-flex);
+        }
+        .item{
+            flex: auto;
+            padding: 10px;
+        }
+        .item.label{
+            flex: none;
+        }
+        .year-2012 .p{
+            border-top: 5px solid var(--google-red-300);
+        }
+        .year-2013 .p{
+            border-top: 5px solid var(--google-blue-300);
+        }
+        .year-2014 .p{
+            border-top: 5px solid var(--google-green-300);
+        }
+        .year-2015 .p{
+            border-top: 5px solid var(--google-yellow-300);
+        }
+    </style>
+    <template>
+        <paper-scroll-header-panel fixed>
+            <div class="paper-header">
+                
+            </div>
+            <div class$="content year-[[config.year]]">
+                <h1>{{config.year}}</h1>
+                <template is="dom-repeat" items=[[config.desc]]>
+                    <div class="p">
+                        <ul>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">起止时间：</span>
+                                    <span class="item">{{item.time}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">项目名称：</span>
+                                    <span class="item">{{item.name}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">软件环境：</span>
+                                    <span class="item">{{item.soft}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">硬件环境：</span>
+                                    <span class="item">{{item.hard}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">开发工具：</span>
+                                    <span class="item">{{item.tool}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">职责描述：</span>
+                                    <span class="item">{{item.responsibility}}</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <span class="item label">项目描述：</span>
+                                    <span class="item">{{item.program}}</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </paper-scroll-header-panel>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'elements-detail',
+        setConfig: function (config) {
+            this.set('config', config);
+        }
+    });
+</script>

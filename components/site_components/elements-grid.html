@@ -7,6 +7,8 @@
             background: #e4e4e4;
             padding: 5px 5px;
             box-sizing: border-box;
+            height: calc(100% - 72px);
+            @apply(--layout-flex);
         }
         
         .tile {
@@ -35,29 +37,7 @@
             width: calc(100%);
             height: calc(100%);
             overflow: hidden;
-        }
-        
-        .sub-tile {
-            display: inline-block;
-        }
-        
-        .list {
-            list-style: none;
-            padding: 0 15px;
-            @apply(--layout-flex-5);
-        }
-        
-        li.sub-tile {
-            list-style: none;
-            display: list-item;
-        }
-        
-        .program {
-            width: 20%;
-        }
-        
-        .program li {
-            white-space: normal;
+            font-family: 'Microsoft YaHei';
         }
         
         .year {
@@ -89,16 +69,50 @@
             display: flex;
             @apply(--layout-center);
         }
+        
+        .card-actions paper-button {
+            color:#fff;
+            font-size: 16px;
+        }
+        
+        .card-actions paper-button.more{
+            float: right;
+        }
+        
         .year-2012 .card-content.city{
+            background: var(--google-red-500);
+        }
+        .year-2012 paper-card{
+            --paper-card-header-color: var(--google-red-500);
+        }
+        .year-2012 .card-actions paper-button{
             background: var(--google-red-500);
         }
         .year-2013 .card-content.city{
             background: var(--google-blue-500);
         }
+        .year-2013 paper-card{
+            --paper-card-header-color: var(--google-blue-500);
+        }
+        .year-2013 .card-actions paper-button{
+            background: var(--google-blue-500);
+        }
         .year-2014 .card-content.city{
             background: var(--google-green-500);
         }
+        .year-2014 paper-card{
+            --paper-card-header-color: var(--google-green-500);
+        }
+        .year-2014 .card-actions paper-button{
+            background: var(--google-green-500);
+        }
         .year-2015 .card-content.city{
+            background: var(--google-yellow-500);
+        }
+        .year-2015 paper-card{
+            --paper-card-header-color: var(--google-yellow-500);
+        }
+        .year-2015 .card-actions paper-button{
             background: var(--google-yellow-500);
         }
     </style>
@@ -120,29 +134,11 @@
                             </div>
                         </template>
                     </div>
-                    <!--<div class="card-actions">
-                        <paper-button>Some action</paper-button>
-                    </div>-->
+                    <div class="card-actions">
+                        <paper-button raised class="more" on-click="_onClickMore" data-year="{{item.year}}">项目经验</paper-button>
+                    </div>
                 </paper-card>
             </div>
-            <!--<div class$="[[_computeTileClass(item.year)]]">
-                <paper-button noink class="sub-tile year">[[item.year]]</paper-button>
-                <ul class="list">
-                    <li class="sub-tile">[[item.timearea]]</li>
-                    <li class="sub-tile">[[item.company]]</li>
-                </ul>
-                <ul class="list program">
-                    <template is="dom-repeat" items="[[item.list]]">
-                        <li class="sub-tile">[[item.name]]</li>
-                        <li class="sub-tile"><p>[[item.desc]]</p></li>
-                    </template>
-                </ul>
-                <ul class="list">
-                    <template is="dom-repeat" items="[[item.tech]]">
-                        <li class="sub-tile">[[item]]</li>
-                    </template>
-                </ul>
-            </div>-->
         </template>
 
     </template>
@@ -165,7 +161,7 @@ Polymer({
             value: function () {
                 return [
                     { 
-                        year: '2015',
+                        year: 2015,
                         tech: [
                             'Polymer',
                             'Angular2-Meteor'
@@ -180,10 +176,38 @@ Polymer({
                         timearea: '2014.12-2016.01',
                         city: '上海',
                         timeline: [
+                            {
+                                m: "08",
+                                d: "开始F项目"  
+                            },
+                            {
+                                m: "01",
+                                d: "开始M项目"
+                            }
+                        ],
+                        desc: [
+                            {
+                                time: '2015.08-2015.12',
+                                name: 'F项目（电子商务网站）',
+                                soft: 'windows 10',
+                                hard: 'pc',
+                                tool: 'Visual Studio Code, SourceTree',
+                                responsibility: '负责框架搭建，整体布局及样式，编写主要功能模块。',
+                                program: '本项目为闪购网站，实现响应式布局，PC/手机端自适应。'
+                            },
+                            {
+                                time: '2015.01-2015.06',
+                                name: 'M项目（电子商务网站）',
+                                soft: 'windows 7',
+                                hard: 'pc',
+                                tool: 'Sublime Text 2, SourceTree',
+                                responsibility: '负责框架搭建，整体布局及样式，编写主要功能模块。',
+                                program: '本项目实现基本的购物流程，包括注册、登录，浏览商品，加入购物车，填写收货信息，付款，售后等服务功能。'
+                            }
                         ]
                     },
                     { 
-                        year: '2014',
+                        year: 2014,
                         tech: [
                             'Bootstrap',
                             'MEAN Stack'
@@ -206,10 +230,21 @@ Polymer({
                                 m: "09",
                                 d: "入职常州诚迈科技有限公司"
                             }
+                        ],
+                        desc: [
+                            {
+                                time: '2014.10-2014.12',
+                                name: '资金管理系统',
+                                soft: 'windows 7',
+                                hard: 'pc',
+                                tool: 'Eclipse, Postgresql, pgadmin 3',
+                                responsibility: '负责注册、登录、信息编辑等模块',
+                                program: '管理企业资金申请拨付'
+                            }
                         ]
                     },
                     { 
-                        year: '2013',
+                        year: 2013,
                         tech: [
                             'RequireJS',
                             'Backbone.js'
@@ -225,13 +260,24 @@ Polymer({
                         city: '南京',
                         timeline: [
                             {
-                                m: "04",
+                                m: "03",
                                 d: "开始建设青奥安保指挥调度平台"
+                            }
+                        ],
+                        desc: [
+                            {
+                                time: '2013.03-2014.09',
+                                name: '亚青（青奥）安保指挥调度平台',
+                                soft: 'windows xp',
+                                hard: 'pc',
+                                tool: 'Myeclipse 6.0, Oracle 11g, PLSQL Developer',
+                                responsibility: '负责平台框架搭建，集成不同部门的系统，本人负责门户及五个系统的开发设计，封装各功能组件，使用异步编程的方式，以及前端MVC框架进行良好的系统架构设计。',
+                                program: '该平台中各系统涉及GIS系统，信息系统，实时监测系统等，项目共两期，分别用于第二届亚洲青年运动会及第二届世界青年奥运会安保指挥调度使用，需要能为客户提供实时监控的数据以及可以进行指挥调度相关资源的功能。'
                             }
                         ]
                     },
                     { 
-                        year: '2012',
+                        year: 2012,
                         tech: [
                             'jQuery'
                         ],
@@ -257,6 +303,26 @@ Polymer({
                                 m: "06",
                                 d: "毕业于安徽工业大学"
                             }
+                        ],
+                        desc: [
+                            {
+                                time: '2012.07-2012.12',
+                                name: '电子商务系统',
+                                soft: 'windows 7',
+                                hard: 'pc',
+                                tool: 'MyEclipse 10, MySql 5.5',
+                                responsibility: '独立开发，符合企业开发规范，使用的主语言为Java。',
+                                program: '本系统实现了商品展示，用户购买，订单管理等模块。分别使用servlet+jsp，struts2+mvc+jdbc，struts2+hibernate+三层架构，strust2+hibernate +spring MVC等不同技术实现及重构。'
+                            },
+                            {
+                                time: '2012.03-2012.06',
+                                name: '在线考试系统',
+                                soft: 'windows 7',
+                                hard: 'pc',
+                                tool: 'Visual Studio 2010, SqlServer 2008 R2',
+                                responsibility: '独立开发，从前台到后台均自学，使用的主语言为c#。',
+                                program: '本系统实现用户和管理员两种权限管理，主要由在线考试模块，用户管理模块，试题管理模块组成。使用.Net Framework 4，asp.net MVC3，asp.net AJAX等技术及框架。'
+                            }
                         ]
                     }
                 ]
@@ -275,12 +341,6 @@ Polymer({
                         timing: {
                             delay: 50
                         }
-                    },{
-                        name: 'cascaded-animation',
-                        animation: 'fade-in-animation',
-                        timing: {
-                            delay: 100
-                        }
                     }]
                 }
             }
@@ -292,15 +352,19 @@ Polymer({
         this.async(function () {
             var nodeList = Polymer.dom(this.root).querySelectorAll('.tile');
             this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
-            var subnodeList = Polymer.dom(this.root).querySelectorAll('.sub-tile');
-            this.animationConfig['entry'][1].nodes = Array.prototype.slice.call(subnodeList);
         });
     },
 
     _computeTileClass: function (year) {
         return 'tile year-' + year;
+    },
+    
+    _onClickMore: function (e) {
+        var year = e.toElement.dataYear;
+        var index = year - 2012 + 1;
+        var resume = document.querySelector('elements-resume');
+        resume.changePage(index);
     }
-
 });
 
 </script>
