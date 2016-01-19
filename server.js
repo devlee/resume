@@ -15,6 +15,6 @@ http.createServer(function (req, res) {
         res.end(data);
     });
 
-}).listen(8180, "127.0.0.1");
+}).listen(8180);
 
-console.log("Server running at http://127.0.0.1:8180/");
+console.log("Server running at port:8180");
