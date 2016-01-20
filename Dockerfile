@@ -13,4 +13,6 @@ RUN mkdir /home/git; \
 
 WORKDIR /home/git/resume
 
+EXPOSE 8180
+
 CMD ["/usr/bin/nodejs","server.js"]
