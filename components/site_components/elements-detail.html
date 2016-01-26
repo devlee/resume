@@ -7,12 +7,14 @@
             @apply(--layout-flex);
         }
         paper-scroll-header-panel {
+        
             position: absolute;
             top: 72px;
             right: 0;
             bottom: 0;
             left: 0;
         }
+        
         h1 {
             border-left: 3px solid #ccc;
             padding-left: 20px;
@@ -48,6 +50,19 @@
         }
         .item.label{
             flex: none;
+        }
+        @media screen and (max-width:768px) {
+            .box {
+                display: block;
+            }
+            .item {
+                display: block;
+            }
+            .item.label {
+                background-color: #efefef;
+                color: #333;
+                @apply(--shadow-elevation-2dp);
+            }
         }
         .year-2012 .p{
             border-top: 5px solid var(--google-red-300);

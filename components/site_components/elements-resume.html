@@ -20,6 +20,13 @@
         neon-animated-pages {
             height: 100%;
         }
+        paper-scroll-header-panel {
+            position: absolute;
+            top: 72px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
     </style>
 
     <template>
@@ -29,8 +36,14 @@
             <elements-cards-list id="list">
                 <div class="fit layout vertical">
                     <elements-toolbar></elements-toolbar>
-
-                    <elements-grid id="grid"></elements-grid>
+                    <paper-scroll-header-panel fixed>
+                        <div class="paper-header">
+                            
+                        </div>
+                        <div>
+                            <elements-grid id="grid"></elements-grid>
+                        </div>
+                    </paper-scroll-header-panel>
                 </div>
             </elements-cards-list>
             <elements-card id="item-2012">

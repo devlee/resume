@@ -5,7 +5,7 @@
         :host {
             display: block;
             background: #e4e4e4;
-            padding: 5px 5px;
+            padding: 10px;
             box-sizing: border-box;
             height: calc(100% - 72px);
             @apply(--layout-flex);
@@ -14,23 +14,15 @@
         .tile {
             display: flex;
             vertical-align: top;
-            width: calc(100% / 2);
-            height: calc(100% / 2);
+            width: calc(100%);
+            height: auto;
             background: #e4e4e4;
             color: #1e1e1e;
-            float: left;
-            padding: 5px;
+            padding: 10px;
             box-sizing: border-box;
             @apply(--paper-font-title);
             @apply(--layout-center);
             @apply(--layout-flex-2);
-        }
-        
-        @media screen and (max-width: 768px) {
-            .tile {
-                width: calc(100%);
-                height: auto;
-            }
         }
         
         paper-card {
@@ -75,8 +67,9 @@
             font-size: 16px;
         }
         
-        .card-actions paper-button.more{
-            float: right;
+        .card-actions{
+            text-align: right;
+            padding: 15px;
         }
         
         .year-2012 .card-content.city{
