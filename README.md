@@ -4,6 +4,8 @@ Script Ahead, Also Behind.
 男 1990.03.13 已婚 中共党员 家乡江苏常州 目前在上海发展
 
 mailto:devlee@outlook.com tel:18651215520
+
+期望工作：20k+，有挑战性，前沿，架构
 ## 教育经历
 安徽工业大学12届计算机科学与技术专业本科毕业
 
@@ -45,3 +47,14 @@ mailto:devlee@outlook.com tel:18651215520
 > 负责平台框架搭建，集成不同部门的系统，本人负责门户及五个系统的开发设计，封装各功能组件，使用异步编程的方式，以及前端MVC框架进行良好的系统架构设计。
 > 
 > 该平台中各系统涉及GIS系统，信息系统，实时监测系统等，项目共两期，分别用于第二届亚洲青年运动会及第二届世界青年奥运会安保指挥调度使用，需要能为客户提供实时监控的数据以及可以进行指挥调度相关资源的功能。
+
+## 个人技能
+工作开发keywords：
+
+react，redux，nodejs，express，async，isomorphic，webpack，babel，es6+，git，yarn，nodejs，web component，vue，vuex，css modules，postcss，jquery free～
+
+学习开发keywords：
+
+typescript，rxjs，pwa，material design，ng2，koa2，docker，linux，machine learning
+
+
