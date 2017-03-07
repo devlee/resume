@@ -5,7 +5,6 @@ Script Ahead, Also Behind.
 
 mailto:devlee@outlook.com tel:18651215520
 
-期望工作：20k+，有挑战性，前沿，架构
 ## 教育经历
 安徽工业大学12届计算机科学与技术专业本科毕业
 
