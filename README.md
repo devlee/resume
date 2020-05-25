@@ -55,12 +55,8 @@ mailto:devlee@outlook.com tel:18651215520
 > 该平台中各系统涉及GIS系统，信息系统，实时监测系统等，项目共两期，分别用于第二届亚洲青年运动会及第二届世界青年奥运会安保指挥调度使用，需要能为客户提供实时监控的数据以及可以进行指挥调度相关资源的功能。
 
 ## 个人技能
-工作开发keywords：
+日常工作keywords：
+管理，架构，设计，研发
 
-react，redux，nodejs，express，async，isomorphic，webpack，babel，es6+，git，yarn，nodejs，web component，vue，vuex，css modules，postcss，jquery free～
-
-学习开发keywords：
-
-typescript，rxjs，pwa，material design，ng2，koa2，docker，linux，machine learning
-
-
+研发工作keywords：
+vue/react，typescript，less，nodejs
