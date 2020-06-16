@@ -88,6 +88,38 @@
     .area-content {
       margin-bottom: 10px;
     }
+    .work-time {
+      color: #333;
+      font-family: "Helvetica Neue";
+    }
+    .work-company {
+      float: right;
+      color: #666;
+    }
+    .tag-item {
+      border: 1px solid #333;
+      color: #333;
+      border-radius: 4px;
+      margin: 1px;
+      line-height: 30px;
+      padding: 2px;
+      font-size: 12px;
+    }
+    .a-item {
+      border: 1px solid #ccc;
+      border-left: 3px solid #999;
+      padding: 0 5px;
+      margin: 2px;
+      display: inline-block;
+    }
+    .company {
+      color: #333;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .work-item .text {
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -103,7 +135,7 @@
           <div class="line"></div>
           <div class="area-content">
             <div class="text">
-              90年，已婚，江苏常州人，WEB工程师，2年JAVA开发经验，7年前端开发经验，3年项目管理经验，2年团队管理经验，寻求业务与技术挑战，注重质量、效率、体验，专注于技术赋能业务。
+              90年，已婚，江苏常州人，WEB工程师，7年前端开发经验，2年JAVA开发经验，3年项目管理经验，2年团队管理经验，寻求业务与技术挑战，注重质量、效率、体验，专注于技术赋能业务。
             </div>
           </div>
         </div>
@@ -120,14 +152,73 @@
         <div class="area">
           <div class="title">工作经历</div>
           <div class="line"></div>
+          <div class="area-content">
+            <div class="text">
+              <span class="work-time">[2017.04-至今]</span><span class="work-company">美团点评</span><br/>
+              <span class="work-time">[2016.02-2017.04]</span><span class="work-company">房多多</span><br/>
+              <span class="work-time">[2014.12-2016.01]</span><span class="work-company">上海乐麦</span><br/>
+              <span class="work-time">[2014.09-2014.12]</span><span class="work-company">常州诚迈</span><br/>
+              <span class="work-time">[2012.12-2014.09]</span><span class="work-company">南京保通</span><br/>
+              <span class="work-time">[2012.06-2012.11]</span><span class="work-company">培训学习JAVA</span>
+            </div>
+          </div>
         </div>
         <div class="area">
           <div class="title">技能标签</div>
           <div class="line"></div>
+          <div class="area-content">
+            <div class="text">
+              <span class="tag-item">react</span>
+              <span class="tag-item">redux</span>
+              <span class="tag-item">nodejs</span>
+              <span class="tag-item">express</span>
+              <span class="tag-item">async</span>
+              <span class="tag-item">isomorphic</span>
+              <span class="tag-item">webpack</span>
+              <span class="tag-item">babel</span>
+              <span class="tag-item">es6+</span>
+              <span class="tag-item">git</span>
+              <span class="tag-item">yarn</span>
+              <span class="tag-item">nodejs</span>
+              <span class="tag-item">web component</span>
+              <span class="tag-item">ast</span>
+              <span class="tag-item">vue</span>
+              <span class="tag-item">vuex</span>
+              <span class="tag-item">css modules</span>
+              <span class="tag-item">postcss</span>
+              <span class="tag-item">pwa</span>
+              <span class="tag-item">jquery free</span>
+              <span class="tag-item">typescript</span>
+              <span class="tag-item">rxjs</span>
+              <span class="tag-item">docker</span>
+              <span class="tag-item">material design</span>
+              <span class="tag-item">koa2</span>
+              <span class="tag-item">linux</span>
+              <span class="tag-item">less</span>
+            </div>
+          </div>
+        </div>
+        <div class="area">
+          <div class="title">作品</div>
+          <div class="line"></div>
+          <div class="area-content">
+            <div class="text">
+              <a class="a-item" href="https://devlee.github.io/Bezier/?400,600,100,400,300,200,500,400,375,475,400,375,425,475,300,400,500,200,700,400,400,600">Bezier</a><br />
+              <a class="a-item" href="https://devlee.github.io/2016/09/18/Docker-On-Ubuntu/">Docker On Ubuntu</a><br />
+              <a class="a-item" href="https://devlee.github.io/2017/01/03/Constructing-SPA-application-based-on-React-isomorphism/">Constructing-SPA-application-based-on-React-isomorphism</a><br />
+              <a class="a-item" href="https://segmentfault.com/a/1190000011409257">从零开始构建react应用（系列文章共7篇）</a>
+            </div>
+          </div>
         </div>
         <div class="area">
           <div class="title">社区</div>
           <div class="line"></div>
+          <div class="area-content">
+            <div class="text">
+              <a class="a-item" href="https://github.com/devlee">Github</a>
+              <a class="a-item" href="https://segmentfault.com/u/devlee">SegmentFault</a>
+            </div>
+          </div>
         </div>
       </section>
       <section class="right">
@@ -136,20 +227,98 @@
           <h3 class="zym">Script Ahead, Also Behind<span class="tel"><a class="basea" href="tel:18651215520">18651215520</a></span></h3>
           <h3 class="profession">Front-End Engineer<span class="mail"><a class="basea" href="mailto:devlee@outlook.com">devlee@outlook.com</a></span></h3>
         </div>
-        <!-- <div class="line"></div> -->
         <div class="area">
           <div class="title">项目经历</div>
           <div class="line"></div>
           <div class="work-item">
             <div class="company">
               <span>美团点评</span>
-              <span>美团外卖营销系统运营前端组</span>
+              <span>高达平台</span>
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;负责平台整体架构设计、全部功能模块设计，部分功能模块实现。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本项目为H5页面可视化搭建项目，服务于到家营销业务。为了解决日益增长的业务需求和紧缺前端人力之间的矛盾，提升业务效率，我们通过可视化搭建的方式，将RD模块化的思想带给产品运营，改变产研运作流程，赋予运营快速创建营销活动页面的能力，节省前端RD人力1500PD/季度。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;另下沉可视化技术能力Gundam-Zero，抽象可视化搭建协议，为不同的角色（如商家、代理商、BD等）和业务方赋予可视化搭建能力，基于协议自定义技术实现与业务实现，用于搭建H5、APP、小程序等多种技术栈的页面、局部的区域和模块，支撑不同的业务场景，如APP首页流量运营、广告等。
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="company">
+              <span>房多多</span>
+              <span>暖城</span>
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目为高端租房项目，使用react技术栈，分PC及H5端，我负责了PC端前端页面及服务端nodejs层的开发。PC端不同于H5端的是PC端使用了react + redux同构，服务端使用nodejs调用基础服务并提供前端页面以RESTful风格的API。    
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在该项目中，我遇到的最大的问题是服务端流式渲染及组件缓存的问题，我尝试了服务端流式渲染以及对路由进行了内容缓存（以路由为key，页面HTML为value存入redis），发现渲染速度上差别不大（页面不够复杂），但是对路由进行内容缓存避免了服务端再次实时调用渲染函数进行操作，极大的提高了服务端响应速度（100ms+ -> 20ms）和性能（500QPS -> 2000QPS），另外nodejs进程的内存占用也从130m+降低到了60m左右。该项目使用同构后使得首屏渲染时间从1500ms降低到了800ms左右，在以SPA形态提供良好用户体验的同时又保证了SEO。提高了前端开发的效率，实现更加彻底的组件化。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在该项目中，我写了一个内部npm包以在nodejs格式化dubbo服务参数（输入json格式，输出调用dubbo服务复杂的参数格式），从而提高了node层基础服务调用的效率。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目结束后我负责种子项目reactjs-isomorphic的搭建，给整个前端部门分享并推行其他项目的重构工作。
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="company">
+              <span>房多多</span>
+              <span>多多社区</span>
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目为房产社区项目，使用vue1.0技术栈，分PC端和iOS/Android端，我负责了PC端前端页面及服务端nodejs层的开发。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目中最为复杂的部分莫过于帖子相关的展示、查询，由于帖子在不同的页面会有不同的展示形态，而仅使用一个组件，由于过于复杂，我拆分了该帖子组件，由若干子组件组成，包含用户（不同权限）操作组件，文本内容组件，消息内容组件，图片内容组件，回复内容组件等等。而查询部分由于不同页面及不同权限用户的列表展现内容俱不相同，业务逻辑复杂，我将该部分逻辑一分为二，nodejs层处理数据整合（权限、帖子、回复），前端组件负责“滚动加载+分页”的逻辑。前端查询逻辑单独于一个组件，然后配合不同页面的展示组件以展示列表。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目结束后我负责给前端部门分享vuex相关内容。后该项目由其他同事负责后续版本迭代，我负责相关指导。
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="company">
+              <span>乐麦</span>
+              <span>floryday & vbridal</span>
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;floryday项目为外贸服饰闪购网站，基于公司现有种子项目进行开发，使用jquery+php模板进行开发，使用less进行了响应式样式的开发，使得网站可以在不同尺寸的屏幕下良好的展示。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vbridal项目为外贸婚纱网站，是公司已有的老项目，我负责若干页面样式改版及迭代。
+            </div>
+            <div class="text">
+            </div>
+          </div>
+          <div class="work-item">
+            <div class="company">
+              <span>保通</span>
+              <span>青奥（亚青）安保指挥调度平台</span>
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该项目为公安内部系统，无外链。该平台中各系统涉及GIS系统，信息系统，实时监测系统等，用于亚青以青奥安保指挥调度使用，需要能为客户提供实时监控的数据以及可以进行指挥调度相关资源的功能。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我主要负责平台框架搭建，集成不同部门的系统（子系统约10个），封装js功能组件，基于java web进行开发，大多数时间写前端交互逻辑，java部分主要对现有地理数据的查询方法进行了整合，利用反射实现js中的将方法作为参数传入另一个方法中进行调用，删除了大量重复代码，仅需传递相关变量即可调用不同类型地理数据的查询。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在项目开始前，公司内部开发部门还在使用着原生js，由于是政府企业，所以其他项目中重复代码随处可见，为了改变这种情况，我引入了jquery，从简单到复杂将公用功能封装成jq插件，从而有效的保证了项目代码的可维护性。
+            </div>
+            <div class="text">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;平台下集成的子系统约有一半是我开发的，其他一个子系统使用了MetroUI，其样式使用了开源的css库，js部分由我封装，只需传入json数据就可以生成Metro界面（即最原始的win8系统开始界面）。
             </div>
           </div>
         </div>
         <div class="area">
           <div class="title">自我评价</div>
           <div class="line"></div>
+          <div class="area-content">
+            <div class="text">
+              Reliable
+            </div>
+          </div>
         </div>
       </section>
     </div>
